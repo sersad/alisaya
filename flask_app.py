@@ -14,7 +14,9 @@ import json
 app = Flask(__name__)
 
 # Устанавливаем уровень логирования
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.INFO,
+                    filename='logfile.log',
+                    format='%(asctime)s %(levelname)s %(name)s %(message)s')
 
 # Создадим словарь, чтобы для каждой сессии общения с навыком хранились подсказки, которые видел пользователь.
 # Это поможет нам немного разнообразить подсказки ответов (buttons в JSON ответа).
